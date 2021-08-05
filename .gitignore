@@ -1,71 +1,77 @@
-#####
-# OS X temporary files that should never be committed
+
+# Created by https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,xcode,cocoapods
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
+
+### macOS ###
+# General
 .DS_Store
-*.swp
-*.lock
-profile
+.AppleDouble
+.LSOverride
 
-####
-# Xcode temporary files that should never be committed
-*~.nib
+# Icon must end with two \r
+Icon
 
-####
-# Objective-C/Swift specific
-*.hmap
-*.ipa
 
-####
-# Xcode build files
-DerivedData/
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
-Builds/
-
-#####
-# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+DerivedData/
+*.moved-aside
 *.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
 !default.pbxuser
+*.mode1v3
 !default.mode1v3
+*.mode2v3
 !default.mode2v3
+*.perspectivev3
 !default.perspectivev3
 
-####
-# Xcode 4
-xcuserdata
-!xcschemes
-# Xcode 4
-*.moved-aside
+## Gcc Patch
+/*.gcno
 
-####
-# XCode 4 workspaces - more detailed
-!xcshareddata
-!default.xcworkspace
-*.xcworkspacedata
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
 
-
-####
-# Xcode 5
-*.xccheckout
-*.xcuserstate
-
-####
-# Xcode 7
-*.xcscmblueprint
-
-####
-# AppCode
-.idea/
-
-####
-# Other Xcode files
-profile
-*.hmap
-*.ipa
-
-####
-# Carthage
-Carthage/Build
-
-IDEWorkspaceChecks.plist
+# End of https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods

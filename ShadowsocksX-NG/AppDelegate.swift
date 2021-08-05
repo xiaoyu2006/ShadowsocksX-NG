@@ -10,6 +10,7 @@ import Cocoa
 import Carbon
 import RxCocoa
 import RxSwift
+import Alamofire
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
@@ -81,7 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         
         self.ensureLaunchAgentsDirOwner()
         
-        // Prepare ss-local
+        // Prepare sslocal
         InstallSSLocal()
         InstallPrivoxy()
         InstallSimpleObfs()
@@ -278,6 +279,38 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         UpdatePACFromGFWList()
     }
     
+    @IBAction func updateSSLocal(_ sender: NSMenuItem) {
+        let homeDir = NSHomeDirectory()
+        let ssLocalDir = homeDir + APP_SUPPORT_DIR + "sslocal/sslocal"
+        if !FileManager.default.fileExists(atPath: ssLocalDir) {
+            InstallSSLocal()
+        }
+        let downloadURL = "https://github.com/xiaoyu2006/ss-buildbot/releases/latest/download/sslocal"
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let destURL = URL(fileURLWithPath: ssLocalDir)
+            NSLog("Downloading to destination \(destURL).")
+            return (destURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        // TODO: Check remote version number.
+        Alamofire.download(downloadURL, to: destination).response { [self] response in
+            let notification = NSUserNotification()
+            if response.error == nil {
+                notification.title = "sslocal updated successfully".localized
+                do {
+                    try FileManager.default.setAttributes([.posixPermissions: 0o754], ofItemAtPath: ssLocalDir)
+                    self.doToggleRunning(showToast: false)
+                    self.doToggleRunning(showToast: false)
+                } catch {
+                    notification.title = "Failed to update sslocal".localized
+                    NSLog("Permission denied to \(ssLocalDir).")
+                }
+            } else {
+                notification.title = "Failed to update sslocal".localized
+            }
+            NSUserNotificationCenter.default.deliver(notification)
+        }
+    }
+    
     @IBAction func editUserRulesForPAC(_ sender: NSMenuItem) {
         if editUserRulesWinCtrl != nil {
             editUserRulesWinCtrl.close()
@@ -430,7 +463,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if let appUrl = ws.urlForApplication(withBundleIdentifier: "com.apple.Console") {
             try! ws.launchApplication(at: appUrl
                 ,options: NSWorkspace.LaunchOptions.default
-                ,configuration: [NSWorkspace.LaunchConfigurationKey.arguments: "~/Library/Logs/ss-local.log"])
+                ,configuration: [NSWorkspace.LaunchConfigurationKey.arguments: "~/Library/Logs/sslocal.log"])
         }
     }
     
@@ -439,6 +472,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     @IBAction func checkForUpdates(_ sender: NSMenuItem) {
+        // TODO: Better update.
         NSWorkspace.shared.open(URL(string: "https://github.com/shadowsocks/ShadowsocksX-NG/releases")!)
     }
     

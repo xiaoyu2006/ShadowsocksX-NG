@@ -1,24 +1,24 @@
 PODS:
-  - Alamofire (5.4.3)
+  - Alamofire (4.7.3)
   - BRLOptionParser (0.3.1)
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
   - MASShortcut (2.4.0)
-  - RxCocoa (6.2.0):
-    - RxRelay (= 6.2.0)
-    - RxSwift (= 6.2.0)
-  - RxRelay (6.2.0):
-    - RxSwift (= 6.2.0)
-  - RxSwift (6.2.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4.3)
+  - Alamofire (~> 4.7.2)
   - BRLOptionParser (~> 0.3.1)
   - GCDWebServer (~> 3.0)
   - MASShortcut (~> 2)
-  - RxCocoa (~> 6.2.0)
-  - RxSwift (~> 6.2.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
 
 SPEC REPOS:
   trunk:
@@ -31,14 +31,14 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BRLOptionParser: a03256a8ff003ca1f5376c55f55f210e085a3958
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
-  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
-  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
-  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 5e6ee339e4466d456309238c104e8625cd1e3e41
+PODFILE CHECKSUM: 9b3e096844ed7342417acd349dd5ec83dc6c9ab2
 
 COCOAPODS: 1.10.1

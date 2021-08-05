@@ -170,7 +170,7 @@ func UpdatePACFromGFWList() {
     }
     
     let url = UserDefaults.standard.string(forKey: "GFWListURL")
-    AF.request(url!)
+    Alamofire.request(url!)
         .validate()
         .responseString {
             response in
