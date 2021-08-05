@@ -2,7 +2,7 @@
 
 [Download](https://github.com/ssx-ng/ShadowsocksX-NG/releases/latest)
 
-[![Actions Status](https://github.com/ssx-ng/ShadowsocksX-NG/workflows/CI/badge.svg)](https://github.com/shadowsocks/ShadowsocksX-NG/actions)
+[![Actions Status](https://github.com/ssx-ng/ShadowsocksX-NG/workflows/CI/badge.svg)](https://github.com/ssx-ng/ShadowsocksX-NG/actions)
 
 Next Generation of [ShadowsocksX](https://github.com/shadowsocks/shadowsocks-iOS)
 
