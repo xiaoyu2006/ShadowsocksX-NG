@@ -1,15 +1,11 @@
-name: Labeling new issue
-on:
-  issues:
-    types: ['opened']
+on: issues
+name: Create Default Labels
 jobs:
-  build:
+  labels:
+    name: CreateLabels
     runs-on: ubuntu-latest
     steps:
-      - uses: Renato66/auto-label@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          ignore-comments: true
-          labels-synonyms: '{"bug":["error","need fix","not working"],"enhancement":["upgrade"],"question":["help"]}'
-          labels-not-allowed: '["good first issue"]'
-          default-labels: '["not confirmed"]'
+      - uses: actions/checkout@2
+      - uses: lannonbr/issue-label-manager-action@3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
