@@ -458,22 +458,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         self.makeToast("Export Command Copied.".localized)
     }
     
+    func revealInFolder(_ fileURL: URL) {
+        NSWorkspace.shared.activateFileViewerSelecting([fileURL])
+    }
+
+    
     @IBAction func showLogs(_ sender: NSMenuItem) {
-        let ws = NSWorkspace.shared
-        if let appUrl = ws.urlForApplication(withBundleIdentifier: "com.apple.Console") {
-            try! ws.launchApplication(at: appUrl
-                ,options: NSWorkspace.LaunchOptions.default
-                ,configuration: [NSWorkspace.LaunchConfigurationKey.arguments: "~/Library/Logs/sslocal.log"])
-        }
+        let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
+        let logFileURL = homeDirURL.appendingPathComponent("/Library/Logs/sslocal.log")
+        revealInFolder(logFileURL)
     }
     
     @IBAction func feedback(_ sender: NSMenuItem) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/qiuyuzhou/ShadowsocksX-NG/issues")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/ssx-ng/ShadowsocksX-NG/issues")!)
     }
     
     @IBAction func checkForUpdates(_ sender: NSMenuItem) {
         // TODO: Better update.
-        NSWorkspace.shared.open(URL(string: "https://github.com/shadowsocks/ShadowsocksX-NG/releases")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/ssx-ng/ShadowsocksX-NG/releases")!)
     }
     
     @IBAction func exportDiagnosis(_ sender: NSMenuItem) {
@@ -500,7 +502,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     @IBAction func showHelp(_ sender: NSMenuItem) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/shadowsocks/ShadowsocksX-NG/wiki")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/ssx-ng/ShadowsocksX-NG/wiki")!)
     }
     
     @IBAction func showAbout(_ sender: NSMenuItem) {
