@@ -127,29 +127,29 @@ for string1 in strings:
         if dupmatch == 0:
             filestrings[string1[2]].append(string1)
 
-print '\n\n\n\n\n'
-print '/*\n * SHARED STRINGS\n */\n'
+print('\n\n\n\n\n')
+print('/*\n * SHARED STRINGS\n */\n')
 
 # output filewise
 for key in filestrings.keys():
-    print '/*\n * ' + key + '\n */\n'
+    print('/*\n * ' + key + '\n */\n')
 
     strings = filestrings[key]
     for string in strings:
         if string[1] == '':
-            print '"' + string[0] + '" = "' + string[0] + '";'
+            print('"' + string[0] + '" = "' + string[0] + '";')
             print
         else:
-            print '/* ' + string[1] + ' */'
-            print '"' + string[0] + '" = "' + string[0] + '";'
-            print
+            print ('/* ' + string[1] + ' */')
+            print ('"' + string[0] + '" = "' + string[0] + '";')
+            print()
 
 # output duplicates
 for string in duplicated:
     if string[1] == '':
-        print '"' + string[0] + '" = "' + string[0] + '";'
-        print
+        print ('"' + string[0] + '" = "' + string[0] + '";')
+        print()
     else:
-        print '/* ' + string[1] + ' */'
-        print '"' + string[0] + '" = "' + string[0] + '";'
-        print
+        print ('/* ' + string[1] + ' */')
+        print ('"' + string[0] + '" = "' + string[0] + '";')
+        print()

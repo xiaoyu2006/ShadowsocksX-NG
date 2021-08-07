@@ -458,13 +458,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         self.makeToast("Export Command Copied.".localized)
     }
     
+    func revealInFolder(_ fileURL: URL) {
+        NSWorkspace.shared.activateFileViewerSelecting([fileURL])
+    }
+
+    
     @IBAction func showLogs(_ sender: NSMenuItem) {
-        let ws = NSWorkspace.shared
-        if let appUrl = ws.urlForApplication(withBundleIdentifier: "com.apple.Console") {
-            try! ws.launchApplication(at: appUrl
-                ,options: NSWorkspace.LaunchOptions.default
-                ,configuration: [NSWorkspace.LaunchConfigurationKey.arguments: "~/Library/Logs/sslocal.log"])
-        }
+        let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
+        let logFileURL = homeDirURL.appendingPathComponent("/Library/Logs/sslocal.log")
+        revealInFolder(logFileURL)
     }
     
     @IBAction func feedback(_ sender: NSMenuItem) {
