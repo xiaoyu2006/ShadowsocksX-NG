@@ -278,39 +278,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     @IBAction func updateGFWList(_ sender: NSMenuItem) {
         UpdatePACFromGFWList()
     }
-    
-    @IBAction func updateSSLocal(_ sender: NSMenuItem) {
-        let homeDir = NSHomeDirectory()
-        let ssLocalDir = homeDir + APP_SUPPORT_DIR + "sslocal/sslocal"
-        if !FileManager.default.fileExists(atPath: ssLocalDir) {
-            InstallSSLocal()
-        }
-        let downloadURL = "https://github.com/xiaoyu2006/ss-buildbot/releases/latest/download/sslocal"
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let destURL = URL(fileURLWithPath: ssLocalDir)
-            NSLog("Downloading to destination \(destURL).")
-            return (destURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        // TODO: Check remote version number.
-        Alamofire.download(downloadURL, to: destination).response { [self] response in
-            let notification = NSUserNotification()
-            if response.error == nil {
-                notification.title = "sslocal updated successfully".localized
-                do {
-                    try FileManager.default.setAttributes([.posixPermissions: 0o754], ofItemAtPath: ssLocalDir)
-                    self.doToggleRunning(showToast: false)
-                    self.doToggleRunning(showToast: false)
-                } catch {
-                    notification.title = "Failed to update sslocal".localized
-                    NSLog("Permission denied to \(ssLocalDir).")
-                }
-            } else {
-                notification.title = "Failed to update sslocal".localized
-            }
-            NSUserNotificationCenter.default.deliver(notification)
-        }
-    }
-    
+        
     @IBAction func editUserRulesForPAC(_ sender: NSMenuItem) {
         if editUserRulesWinCtrl != nil {
             editUserRulesWinCtrl.close()
