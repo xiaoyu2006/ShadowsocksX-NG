@@ -10,7 +10,7 @@ PODS:
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - RxSwift (5.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
 
 PODFILE CHECKSUM: 9b3e096844ed7342417acd349dd5ec83dc6c9ab2
 
