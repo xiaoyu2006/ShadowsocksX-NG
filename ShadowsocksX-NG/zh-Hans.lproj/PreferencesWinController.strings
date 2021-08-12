@@ -10,6 +10,9 @@
 /* Class = "NSToolbarItem"; label = "Servers"; ObjectID = "8Nu-gG-5rY"; */
 "8Nu-gG-5rY.label" = "Servers";
 
+/* Class = "NSTextFieldCell"; title = "The mode will be switched to by the shortcut："; ObjectID = "JZn-Si-mym"; */
+"JZn-Si-mym.title" = "会被快捷键切换的模式：";
+
 /* Class = "NSToolbarItem"; paletteLabel = "Servers"; ObjectID = "8Nu-gG-5rY"; */
 "8Nu-gG-5rY.paletteLabel" = "Servers";
 
@@ -50,7 +53,7 @@
 "F5Q-Ce-JJN.label" = "HTTP";
 
 /* Class = "NSTextFieldCell"; title = "Num of Kcptun connections:"; ObjectID = "FSi-9j-QBe"; */
-"FSi-9j-QBe.title" = "Num of Kcptun connections:";
+"FSi-9j-QBe.title" = "Kcptun 连接数量";
 
 /* Class = "NSButtonCell"; title = "Local PAC Server Bind To Localhost"; ObjectID = "oCf-id-PAx"; */
 "oCf-id-PAx.title" = "本地PAC服务器监听localhost";
@@ -80,7 +83,7 @@
 "v4F-L4-s8U.title" = "忽略这些主机与域的代理设置：";
 
 /* Class = "NSButtonCell"; title = "Enable Verbose Mode"; ObjectID = "cIS-Wb-Rzg"; */
-"cIS-Wb-Rzg.title" = "Enable Verbose Mode";
+"cIS-Wb-Rzg.title" = "开启日志详细模式";
 
 /* Class = "NSTabViewItem"; label = "Interfaces"; ObjectID = "eDR-CZ-P4p"; */
 "eDR-CZ-P4p.label" = "网络接口";
@@ -122,10 +125,10 @@
 "sQ9-bj-V0I.title" = "超时:";
 
 /* Class = "NSTextFieldCell"; title = "Which network interfaces  proxy setting would be controlled by ShadowsocksX-NG"; ObjectID = "t0I-6n-gnu"; */
-"t0I-6n-gnu.title" = "Which network interfaces  proxy setting would be controlled by ShadowsocksX-NG";
+"t0I-6n-gnu.title" = "哪些网络接口代理设置将由 ShadowsocksX-NG 控制";
 
 /* Class = "NSTextFieldCell"; title = "GFW List URL:"; ObjectID = "v7a-wf-aEm"; */
-"v7a-wf-aEm.title" = "GFW List URL:";
+"v7a-wf-aEm.title" = "GFWList URL:";
 
 /* Class = "NSButtonCell"; title = "Show Running Proxy Mode In Status Bar"; ObjectID = "wXO-Qz-yDg"; */
 "wXO-Qz-yDg.title" = "在状态栏显示当前代理模式";

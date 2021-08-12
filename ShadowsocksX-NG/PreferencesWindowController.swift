@@ -371,7 +371,7 @@ class PreferencesWindowController: NSWindowController
         }
     }
 
-    func shakeWindows(){
+    func shakeWindows() {
         let numberOfShakes:Int = 8
         let durationOfShake:Float = 0.5
         let vigourOfShake:Float = 0.05

@@ -229,7 +229,6 @@
 		9BAA662623295FAB00F5CC99 /* menu_g_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_g_icon.png; sourceTree = "<group>"; };
 		9BAA66372329636200F5CC99 /* user-privoxy.config */ = {isa = PBXFileReference; lastKnownFileType = text; path = "user-privoxy.config"; sourceTree = "<group>"; };
 		9BAFE2E31E83ED7F00F71CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWinController.xib; sourceTree = "<group>"; };
-		9BAFE2E91E83EDDF00F71CCE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PreferencesWinController.strings"; sourceTree = "<group>"; };
 		9BB706A51D1B982300551F0E /* SWBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBApplication.m; sourceTree = "<group>"; };
 		9BB706A61D1B982300551F0E /* SWBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBApplication.h; sourceTree = "<group>"; };
 		9BBE7B711F50790500E8FFE5 /* fix_dir_owner.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fix_dir_owner.sh; sourceTree = "<group>"; };
@@ -246,6 +245,7 @@
 		BA40BC6A25C5874B009354F2 /* sslocal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sslocal; path = "ShadowsocksX-NG/sslocal/sslocal"; sourceTree = SOURCE_ROOT; };
 		BA40BC8425C58FED009354F2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		BA40BC9025C69280009354F2 /* libev.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libev.4.dylib; sourceTree = "<group>"; };
+		BA4B40C026C554D6002B7D80 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PreferencesWinController.strings"; sourceTree = "<group>"; };
 		C6D4298E1DA75988002A5711 /* install_privoxy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_privoxy.sh; sourceTree = "<group>"; };
 		C6D4298F1DA75988002A5711 /* privoxy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = privoxy; sourceTree = "<group>"; };
 		C6D429911DA75988002A5711 /* start_privoxy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start_privoxy.sh; sourceTree = "<group>"; };
@@ -919,7 +919,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9BAFE2E31E83ED7F00F71CCE /* Base */,
-				9BAFE2E91E83EDDF00F71CCE /* zh-Hans */,
+				BA4B40C026C554D6002B7D80 /* zh-Hans */,
 			);
 			name = PreferencesWinController.xib;
 			sourceTree = "<group>";
