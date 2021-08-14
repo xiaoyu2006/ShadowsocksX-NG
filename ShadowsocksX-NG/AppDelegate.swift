@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        _ = LaunchAtLoginController()// Ensure set when launch
+        _ = LaunchAtLoginController()  // Ensure set when launch
         
         NSUserNotificationCenter.default.delegate = self
         

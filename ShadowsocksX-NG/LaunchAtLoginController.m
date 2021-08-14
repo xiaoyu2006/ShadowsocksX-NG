@@ -68,9 +68,7 @@
 {
     static NSString* bundleID = @"com.qiuyuzhou.ShadowsocksX-NG.LaunchHelper";
     
-    if (SMLoginItemSetEnabled(
-                              (__bridge CFStringRef)bundleID
-                              , enabled)) {
+    if (SMLoginItemSetEnabled((__bridge CFStringRef) bundleID, enabled)) {
         _enabled = enabled;
         NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool: enabled forKey: @"LaunchAtLogin"];
